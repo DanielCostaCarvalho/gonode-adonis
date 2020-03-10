@@ -1,6 +1,6 @@
 'use strict'
 
-const { test, trait} = use('Test/Suite')('Session')
+const { test, trait } = use('Test/Suite')('Session')
 
 trait('Test/ApiClient')
 
@@ -13,7 +13,7 @@ test('Retorna um token quando se autentica', async ({ assert, client }) => {
     password: '123'
   }
 
-  const user = await User.create(baseUser)
+  await User.create(baseUser)
 
   const response = await client.post('/sessions')
     .send(baseUser)
