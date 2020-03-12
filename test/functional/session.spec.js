@@ -23,7 +23,7 @@ test('Retorna um token quando se autentica', async ({ assert, client }) => {
   assert.exists(response.body.token)
 })
 
-test('Retorna um erro se não encontrar o usuário', async ({ assert, client }) => {
+test('Retorna um erro se não encontrar o usuário', async ({ client }) => {
   const baseUser = {
     username: 'teste4',
     email: 'test4@email',

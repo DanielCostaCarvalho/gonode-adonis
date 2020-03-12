@@ -23,14 +23,14 @@ test('Cadastrar token ao chamar rota de senha esquecida', async ({ assert, clien
   assert.isNotNull(user.token)
 })
 
-test('Retornar erro ao chamar rota de senha esquecida com email inexistente', async ({ assert, client }) => {
+test('Retornar erro ao chamar rota de senha esquecida com email inexistente', async ({ client }) => {
   const baseUser = {
     username: 'teste3',
     email: 'test3@email',
     password: '123'
   }
 
-  const user = await User.create(baseUser)
+  await User.create(baseUser)
 
   const response = await client.post('/forgotpassword')
     .send({ email: 'falso@mail' })
