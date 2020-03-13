@@ -3,6 +3,7 @@
 const { test, trait } = use('Test/Suite')('Session')
 
 trait('Test/ApiClient')
+trait('DatabaseTransactions')
 
 const User = use('App/Models/User')
 
@@ -25,8 +26,8 @@ test('Retorna um token quando se autentica', async ({ assert, client }) => {
 
 test('Retorna um erro se não encontrar o usuário', async ({ client }) => {
   const baseUser = {
-    username: 'teste4',
-    email: 'test4@email',
+    username: 'teste',
+    email: 'test@email',
     password: '123'
   }
 

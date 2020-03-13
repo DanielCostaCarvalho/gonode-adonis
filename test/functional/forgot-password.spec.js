@@ -11,8 +11,8 @@ const User = use('App/Models/User')
 
 test('Cadastrar token ao chamar rota de senha esquecida', async ({ assert, client }) => {
   const baseUser = {
-    username: 'teste2',
-    email: 'test2@email',
+    username: 'teste',
+    email: 'test@email',
     password: '123'
   }
 
@@ -32,8 +32,8 @@ test('Cadastrar token ao chamar rota de senha esquecida', async ({ assert, clien
 
 test('Enviar email ao chamar rota de senha esquecida', async ({ assert, client }) => {
   const baseUser = {
-    username: 'teste2',
-    email: 'test2@email',
+    username: 'teste',
+    email: 'test@email',
     password: '123'
   }
 
@@ -54,8 +54,8 @@ test('Enviar email ao chamar rota de senha esquecida', async ({ assert, client }
 
 test('Retornar erro ao chamar rota de senha esquecida com email inexistente', async ({ client }) => {
   const baseUser = {
-    username: 'teste3',
-    email: 'test3@email',
+    username: 'teste',
+    email: 'test@email',
     password: '123'
   }
 
