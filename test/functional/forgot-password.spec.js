@@ -4,6 +4,8 @@ const { test, trait } = use('Test/Suite')('ForgotPassword')
 
 trait('Test/ApiClient')
 
+const Mail = use('Mail')
+
 const User = use('App/Models/User')
 
 test('Cadastrar token ao chamar rota de senha esquecida', async ({ assert, client }) => {
@@ -14,6 +16,8 @@ test('Cadastrar token ao chamar rota de senha esquecida', async ({ assert, clien
   }
 
   const user = await User.create(baseUser)
+
+  Mail.fake()
 
   const response = await client.post('/forgotpassword')
     .send(baseUser)
