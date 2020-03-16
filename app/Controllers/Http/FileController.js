@@ -48,6 +48,12 @@ class FileController {
       return response.status(err.status).send({ error: { message: 'Erro no upload do arquivo' } })
     }
   }
+
+  async show ({ params, response }) {
+    const file = await File.findOrFail(params.id)
+
+    return response.download(Helpers.tmpPath(`uploads/${file.file}`))
+  }
 }
 
 module.exports = FileController
